@@ -29,7 +29,7 @@ function generateBookmarklet() {
   const valueStr = JSON.stringify(values);
   let url = `javascript:(function(){const arg=${valueStr}; ${coreJs} core(...arg); })();`;
   document.getElementById('bookmarklet').href = url;
-  document.getElementById('bookmarklet').innerText = `${values[2].substring(5)}-${values[3]}-${station[values[0]]}-${station[values[1]]}`;
+  document.getElementById('bookmarklet').innerText = `${values[2].substring(5)}-${values[3]}-${station[values[0]] || ''}-${station[values[1]] || ''}`;
 }
 generateBookmarklet();
 
